@@ -1,5 +1,5 @@
 /**
- * ? Special data-type
+ * ? Unknown types
  */
 
 //! Unknown
