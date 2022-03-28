@@ -2,7 +2,7 @@
  * ? void - look like void in C/c++
  */
 
-let value : void = undefined;
+let val : void = undefined;
 console.log('value:', value, '- type:', typeof value);
 
 // value = null;
