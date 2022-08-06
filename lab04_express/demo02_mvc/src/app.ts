@@ -1,15 +1,20 @@
 import express from 'express';
 
-// Config
-const dotenv = require('dotenv');
-dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
-app.get('/', (req, res) => {
-  res.send('Hello World!!!');
+
+// define routers
+
+// config routers
+
+// define catch error
+app.use((err, req, res, next) => {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // response error to client
+  res.status(err.status || 500);
+  res.end();
 });
 
-app.listen(PORT, () => {
-  return console.log(`Server is running at http://localhost:${PORT}`);
-});
+export default app;
